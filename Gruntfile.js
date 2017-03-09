@@ -4,12 +4,12 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       options: {
-        separator : ';'
+        separator: '\n',
       },
       dist: {
-        src : ['shortly-deploy/**/*.js'],
-        dest: 'concatTest/concat.js'
-      }
+        src: ['public/client/*.js'],
+        dest: 'public/dist/concat.js',
+      },
     },
 
     mochaTest: {
@@ -84,6 +84,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'concat'
   ]);
 
   grunt.registerTask('upload', function(n) {
