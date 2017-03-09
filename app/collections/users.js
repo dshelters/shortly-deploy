@@ -1,5 +1,6 @@
 // NOTE: this file is not needed when using MongoDB
 var inTents = 'INTENSE!!!?!';
+console.log(inTents);
 
 var db = require('../config');
 var User = require('../models/user');
