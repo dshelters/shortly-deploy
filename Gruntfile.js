@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       options: {
         separator: '\n',
       },
-      dist: {
+      client: {
         src: ['public/client/*.js'],
         dest: 'public/dist/concat.js',
       },
@@ -28,15 +28,25 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      dist: {
+        src: ['public/dist/concat.js'],
+        dest: 'public/dist/uglies.js'
+      },
     },
 
     eslint: {
       target: [
-        // Add list of files to lint here
+        './'
       ]
     },
 
     cssmin: {
+      target: {
+        files: [{
+          src: ['public/*.css'],
+          dest: 'public/dist/style.min.css'
+        }]
+      }
     },
 
     watch: {
@@ -84,7 +94,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'concat'
+    'concat', 'uglify'
   ]);
 
   grunt.registerTask('upload', function(n) {
@@ -96,7 +106,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('deploy', [
-    // add your deploy tasks here
+    'eslint', 'build', 'upload'
   ]);
 
 
