@@ -1,4 +1,4 @@
-//Making a comment booya
+//Making a comment and build and deploy
 
 window.Shortly = Backbone.View.extend({
   template: Templates.layout,
