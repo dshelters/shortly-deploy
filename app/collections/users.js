@@ -1,5 +1,5 @@
 // NOTE: this file is not needed when using MongoDB
-var inTents = 'INTENSE!!!?!';
+var inTents = 'INTENSE!!!?123123!';
 console.log('tent', inTents);
 
 var db = require('../config');
