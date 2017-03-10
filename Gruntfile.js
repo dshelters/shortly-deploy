@@ -98,7 +98,7 @@ module.exports = function(grunt) {
     'concat', 'uglify'
   ]);
 
-  grunt.registerTask('watch' [
+  grunt.registerTask('watch', [
     'build'
   ]);
 
