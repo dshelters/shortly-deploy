@@ -115,7 +115,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('deploy', [
-    'eslint', 'build', 'upload'
+    'eslint', 'test', 'build', 'upload'
   ]);
 
 
